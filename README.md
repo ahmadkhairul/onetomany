@@ -1,5 +1,6 @@
-# HOW TO SHOW ONE TO MANY RELATIONSHIP
+# ONE TO MANY CRUD NATIVE PHP
 
+cara penggunaan :
 1. buat database dengan nama onetomany
 2. dump onetomany.sql
 3. setting connect.php sesuaikan dengan koneksi 
