@@ -73,22 +73,21 @@ $result = mysqli_query($mysqli, "
 				}
 				// HTML biasa untuk membuat table
 				echo "<table>";
-				echo "<tr><th>Judul</th><th>Kategori</th>";
+				echo "<tr><th>Judul</th><th>Kategori</th><th>Aksi</th>";
 				// Perulangan untuk memanggil data
 				foreach($data as $key => $value){
 					//Perulangan untuk view setiap judul
-				    echo "<tr><td><a href=view.php?id=".$key.">"
-				    .$value["judul"]."</a></td><td>"; 
+				    echo "<tr><td><a href=view.php?id=".$key.">".$value["judul"]."</a></td><td>"; 
 				    //Perulangan untuk view kategori di masing-masing judul
 				    $subval = "";
 				    foreach($value["kategori"] as $subvalue){
 						//Penambahan koma (,) untuk setiap kategori
-						$subval .= '<a href=kategori.php?kategori='.
-						$subvalue.'>'.$subvalue.'</a>, '; 
+						$subval .= '<a href=kategori.php?kategori='.$subvalue.'>'.$subvalue.'</a>, '; 
 				    }
 				    //Menghilangkan (,) pada kategori yang paling akhir
 				    echo rtrim($subval,", ");
-				    echo "</td></tr>";
+				    echo "</td><td><a href=edit.php?id=".$key.">Edit</a> || <a href=delete.php?id=".$key.">Delete</a></td></tr>";
+
 				}
 				echo "</table>"
 			?>

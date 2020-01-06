@@ -47,7 +47,7 @@ $result = mysqli_query($mysqli, "
 				    echo "<tr><td><a href=view.php?id=".$key.">"
 				    .$value["judul"]."</a></td></tr>";
 				}
-				echo "</table>"
+				echo "</table>";
 				?>
 	</body>
 </html>
